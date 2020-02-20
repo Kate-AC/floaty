@@ -1,0 +1,49 @@
+<html>
+<style>
+.modal {
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+}
+</style>
+
+<body>
+<div floaty="hoge">hello1</div>
+<div floaty="fuga">hello2</div>
+<div floaty="piyo">hello3</div>
+
+<template class="floaty" floaty="hoge">
+  <div class="modal">
+    <button class="f-close">x</button>
+    <div>hoge</div>
+  </div>
+</template>
+
+<template class="floaty" floaty="fuga">
+  <div class="modal">
+    <button class="f-close">x</button>
+    <div>fuga</div>
+  </div>
+</template>
+
+<template class="floaty" floaty="piyo">
+  <div class="modal">
+    <button class="f-close">x</button>
+    <div>piyo</div>
+  </div>
+</template>
+
+<script src="./dist/main.js"></script>
+<script>
+(() => {
+  document.getFloaty()
+    .setOpen(function (e, dom) {
+      console.log('open');
+    });
+    //.setOpened(function () { console.log('opened'); })
+    //.setClose(function () { console.log('close'); })
+    //.setClosed(function () { console.log('closed'); });
+})();
+</script>
+</body>
+</html>
